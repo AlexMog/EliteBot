@@ -26,7 +26,7 @@ public class ApiRequester {
     public static final String USER_AGENT = "Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257";
     
     private BasicCookieStore mCookieStore = new BasicCookieStore();
-    private CookieHelper mCookieHelper = new CookieHelper("./", Main.USERDATA_PATH + "cookies.txt");
+    private CookieHelper mCookieHelper = new CookieHelper(Main.USERDATA_PATH, "cookies.txt");
     private HttpClient mClient = HttpClientBuilder.create()
             .setRedirectStrategy(new LaxRedirectStrategy())
             .setDefaultCookieStore(mCookieStore)

@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-import com.amazonaws.auth.PropertiesFileCredentialsProvider;
 import com.ivona.services.tts.IvonaSpeechCloudClient;
 import com.ivona.services.tts.model.CreateSpeechRequest;
 import com.ivona.services.tts.model.CreateSpeechResult;
@@ -21,10 +20,10 @@ import alexmog.elitebot.frames.WelcomeFrame;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
 public class Main {
+    public static final String USERDATA_PATH = System.getProperty("user.home") + File.separator + "elitebot" + File.separator;
     public static final LoginFrame loginFrame = new LoginFrame();
     public static final Api API = new Api();
     private static IvonaSpeechCloudClient speechCloud;
-    public static final String USERDATA_PATH = System.getProperty("user.home") + File.separator + "elitebot" + File.separator;
     
     public static void main(String[] args) throws Exception {
         File f = new File(USERDATA_PATH);

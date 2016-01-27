@@ -54,4 +54,53 @@
 	  <version>5prealpha-SNAPSHOT</version>
 	</dependency>
   </dependencies>
+  
+  <build>
+    <plugins>
+	    <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>3.5</version>
+	        <configuration>
+	          <source>1.7</source>
+	          <target>1.7</target>
+	        </configuration>
+	    </plugin>
+        <plugin>
+	       <groupId>org.apache.maven.plugins</groupId>
+	       <artifactId>maven-shade-plugin</artifactId>
+	       <version>2.1</version>
+	       <configuration>
+	           <artifactSet>
+	               <includes>
+	                    <include>org.apache.httpcomponents:*</include>
+	                    <include>com.google.code.gson:*</include>
+	                    <include>ivona-speechcloud-sdk-java:*</include>
+	                    <include>com.zenjava:*</include>
+	                    <include>com.googlecode.soundlibs:*</include>
+	                    <include>edu.cmu.sphinx:*</include>
+	               </includes>
+	           </artifactSet>
+	           <createDependencyReducedPom>false</createDependencyReducedPom>
+	       </configuration>
+	       <executions>
+	           <execution>
+	               <phase>package</phase>
+	               <goals>
+	                   <goal>shade</goal>
+	               </goals>
+	               <configuration>
+		              <transformers>
+		                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+		                  <manifestEntries>
+		                    <Main-Class>alexmog.elitebot.Main</Main-Class>
+		                  </manifestEntries>
+		                </transformer>
+		              </transformers>
+		            </configuration>
+	           </execution>
+	       </executions>
+	   </plugin>
+    </plugins>
+  </build>
 </project>
