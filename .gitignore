@@ -15,3 +15,6 @@ hs_err_pid*
 credentials.properties
 target/
 cookies.txt
+.classpath
+.project
+.settings
