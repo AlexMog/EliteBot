@@ -1,0 +1,16 @@
+Welcome to EliteBot.
+This is an opensource project, sources can be found here: https://github.com/AlexMog/EliteBot
+This project is not releated to Frontier development and is a Community project.
+We are using the web API from Elite Dangerous Companion Official iOS application at this address: https://companion.orerve.net/
+We are not saving your login credentials, they are only used for the web-API requests.
+This project has not been created in association with Frontier Developments and is unsupported by them.
+
+An EDDN query option is also available, to allow market data to be published on the EDDN database.
+
+This application is created by AlexMog.
+Other programmers:
+N/A
+
+Special thanks:
+    - Andargor for the EDCE client that I have used to find and understand Frontier's API.
+        https://github.com/Andargor/edce-client
